@@ -1,6 +1,8 @@
 package com.app.pojos;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -26,16 +28,26 @@ private  LocalDateTime startDateTime;
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@Column(name="end_date_time")
 private  LocalDateTime endDateTime;
-@Embedded
-private  Location startLocation;
-@Embedded
-private  Location endLocation;
-@Embedded
-private Location currentLocation;
+//@Embedded
+//private  Location startLocation;
+//@Embedded
+//private  Location endLocation;
+//@Embedded
+//private Location currentLocation;
+	private Double strtLocnLongitude;
+	private Double strtLocnLatitude;
+
+	private Double endLocnLongitude;
+	private Double endtLocnLatitude;
+	private Double currentLocnLongitude;
+	private Double currentLocnLatitude;
 @Enumerated(EnumType.STRING)
 private Status status;
 @Embedded
 private Fare fare;
-
+@ManyToMany(mappedBy="passengerrides")
+private Set<Passenger> passengers= new HashSet<Passenger>();
+@ManyToMany(mappedBy="driverrides")
+private Set<Driver> drivers = new HashSet<Driver>();
 
 }

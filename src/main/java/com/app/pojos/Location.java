@@ -12,7 +12,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString(exclude = "password")
+@ToString
 @Embeddable
 public class Location {
 	//private int  long_deg;

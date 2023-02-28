@@ -2,12 +2,16 @@ package com.app.pojos;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.*;
@@ -47,5 +51,10 @@ public class Driver extends User {
 	@OneToMany
     @JoinColumn(name ="fk_cfeedback")
     private List<Feedback> items = new ArrayList<Feedback>();
+	@ManyToMany
+    @JoinTable(name = "driver_rides",
+           joinColumns = { @JoinColumn(name = "fk_driver") },
+           inverseJoinColumns = { @JoinColumn(name = "fk_dride") })
+    private Set<Ride> driverrides = new HashSet<Ride>();
 
 }

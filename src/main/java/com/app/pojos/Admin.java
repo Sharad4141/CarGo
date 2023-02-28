@@ -22,7 +22,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString(exclude = "password")
-public class Admin {
+public class Admin extends BaseEntity {
 	@Column(nullable = false,length=40)
 	private String firstName;
 	@Column(length=40)
