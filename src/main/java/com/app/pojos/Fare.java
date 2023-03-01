@@ -15,7 +15,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-@NoArgsConstructor
+
 @AllArgsConstructor
 @Getter
 @Setter
@@ -32,5 +32,10 @@ private PaymentType paymentType;
 @Column(name="payment_status")
 @Enumerated(EnumType.STRING)
 private PaymentSatus paymentStatus;
-
+public Fare() {
+	this.amount=0;
+	this.paymentStatus=PaymentSatus.PENDING;
+	this.transactionId="noidyet";
+	this.paymentType=PaymentType.CASH;
+}
 }

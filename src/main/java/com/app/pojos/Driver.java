@@ -51,10 +51,7 @@ public class Driver extends User {
 	@OneToMany
     @JoinColumn(name ="fk_cfeedback")
     private List<Feedback> items = new ArrayList<Feedback>();
-	@ManyToMany
-    @JoinTable(name = "driver_rides",
-           joinColumns = { @JoinColumn(name = "fk_driver") },
-           inverseJoinColumns = { @JoinColumn(name = "fk_dride") })
+	@OneToMany(mappedBy = "driver")
     private Set<Ride> driverrides = new HashSet<Ride>();
 
 }

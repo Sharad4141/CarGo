@@ -42,7 +42,5 @@ public class Passenger extends User{
 		this.passengerrides = passengerrides;
 	}
 	
-		
-	
 	
 }

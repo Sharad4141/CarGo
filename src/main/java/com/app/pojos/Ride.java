@@ -46,8 +46,15 @@ private Status status;
 @Embedded
 private Fare fare;
 @ManyToMany(mappedBy="passengerrides")
-private Set<Passenger> passengers= new HashSet<Passenger>();
-@ManyToMany(mappedBy="driverrides")
-private Set<Driver> drivers = new HashSet<Driver>();
+private Set<Passenger> passengers;//= new HashSet<Passenger>()
+@ManyToOne
+@JoinColumn(name = "fk_driver")
+private Driver driver ;
+public double calculateDist() {
+	return 5.0;
+}
+public Double calcFare() {
+	return this.calculateDist()*7;
+}
 
 }
