@@ -6,11 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.app.dto.RideDto;
 import com.app.enums.PaymentType;
 import com.app.pojos.Driver;
 import com.app.pojos.Location;
 import com.app.pojos.Passenger;
-import com.app.service.RideDto;
 import com.app.service.RideService;
 
 @RestController

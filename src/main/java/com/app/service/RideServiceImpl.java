@@ -6,6 +6,7 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.app.dto.RideDto;
 import com.app.enums.PaymentType;
 import com.app.enums.Status;
 import com.app.pojos.Driver;
