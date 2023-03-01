@@ -35,6 +35,6 @@ private Gender gender;
 @Digits(message = "Number should contain 10 digits.", fraction = 0, integer = 10)
 private long mobileNumber;
 
-private Location location;
+//private Location location;
 	
 }
